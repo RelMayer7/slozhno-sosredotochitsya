@@ -17,6 +17,8 @@
   --footer-title-color: #DB00FF;
   --bg-decor-color: #FF0070;
   --text-decor-color: #000028;
+  --visibility: visible;
+  --bg-accent-color: #FF0070;
 }
 
 .page.theme_dark {
@@ -37,4 +39,6 @@
   --footer-title-color: #DB00FF;
   --bg-decor-color: #FF0070;
   --text-decor-color: #000028;
+  --visibility: visible;
+  --bg-accent-color: #FF0070;
 }
