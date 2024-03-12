@@ -11,7 +11,7 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --bg-image: url(../images/cover-image-light.png);
-  --bg-color: #FFC2E6;
+  --bg-color: #FFF1F7;
   --decor-color: #353430;
   --visibility: hidden;
   --menu-color: #353430;
@@ -26,7 +26,7 @@
   
   :root {
     --bg-image: url(../images/cover-image-light.png);
-    --bg-color: #FFC2E6;
+    --bg-color: #FFF1F7;
     --decor-color: #353430;
     --visibility: hidden;
     --menu-color: #353430;
