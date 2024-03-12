@@ -1,22 +1,46 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  padding: 10px;
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
   object-fit: cover;
   object-position: center;
-  font-family: var(--font-family, sans-serif);
-  font-size: 18px;
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background-color: var(--bg-color, #000028);
-  background-image: var(--bg-image);
   background-attachment: fixed;
+  font-size: var(--font-size-large);
+  font-family: var(--font-family, sans-serif);
+  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
 .header {
-  position: relative;
   display: grid;
   grid-template-rows: 1fr minmax(min-content, max-content) 1fr;
-  min-height: 97vh;
+  height: 100vh;
+  padding: 10px;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone-icon {
+  position: absolute;
+  color: var(--decor-color);
+  line-height: 1.3em;
+  inset-inline-end: 38px;
+  inset-block-start: 10px;
+  visibility: var(--visibility);
+}
+
+.decorated-zone-icon:after {
+  content: '';
+  position: absolute;
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--decor-color, #FF0070);
+  box-shadow: 0 0 4px 2px var(--decor-color, #FF0070);
+  margin-inline-start: 10px;
+  margin-block-start: 8px;
+  border-radius: 50%;
 }
 
 .decorated-zone:after {
@@ -24,10 +48,10 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  border-inline-end: 1px solid var(--decor-color, #FF0070);
-  border-block-start: 1px solid var(--decor-color, #FF0070);
-  inset-inline-end: 0;
-  inset-block-start: 0;
+  border-inline-end: 1px solid var(--decor-color);
+  border-block-start: 1px solid var(--decor-color);
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
 }
 
 .decorated-zone:before {
@@ -35,30 +59,10 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  border-inline-start: 1px solid var(--decor-color, #FF0070);
-  border-block-end: 1px solid var(--decor-color, #FF0070);
-  inset-block-end: 0;
-}
-
-.header-icon {
-  position: absolute;
-  color: var(--header-decor-color, #FF0070);
-  line-height: 1.4em;
-  inset-inline-end: 28px;
-  inset-block-start: 0;
-  visibility: var(--visibility);
-}
-
-.header-icon:after {
-  content: '';
-  position: absolute;
-  margin-inline-start: 10px;
-  margin-block-start: 8px;
-  border-radius: 50%;
-  box-shadow: 0 0 4px 2px var(--header-decor-color, #FF0070);
-  background-color: var(--header-decor-color, #FF0070);
-  inline-size: 9px;
-  block-size: 9px;
+  border-inline-start: 1px solid var(--decor-color);
+  border-block-end: 1px solid var(--decor-color);
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
 }
 
 .header__theme-menu {
@@ -73,11 +77,11 @@
 }
 
 .header__theme-menu-button {
-  border: none;
   padding: 0 13px;
-  color: var(--button-color, #FF0070);
-  text-transform: lowercase;
+  border: none;
   background-color: transparent;
+  text-transform: lowercase;
+  color: var(--menu-color);
   cursor: pointer;
 }
 
@@ -86,35 +90,33 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--button-color, #FF0070);
+  outline: 1px solid var(--menu-color, #FF0070);
 }
 
 .header__theme-menu-button:focus {
-  border-block-end: 1px solid var(--button-color, #FF0070);
+  border-block-end: 1px solid var(--menu-color, #FF0070);
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--button-color, #FF0070);
+  outline: 1px solid var(--menu-color, #FF0070);
   pointer-events: none;
 }
 
 .header__title {
-  color: var(--header-title-color, #DB00FF);
+  color: var(--title-color);
   font-weight: var(--text-bold);
-  font-size: var(--header-title-size);
+  font-size: var(--title-size);
   line-height: 82.5%;
-  letter-spacing: 0%;
   text-align: left;
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
 .title-decor {
-  color: var(--text-decor-color, #000028);
-  font-weight: var(--text-bold, 700);
-  font-size: 18px;
+  color: var(--accent-text-color);
+  background-color: var(--accent-color);
+  font-size: var(--font-size-large);
+  font-weight: var(--text-bold);
   line-height: 1.3em;
-  letter-spacing: 0%;
-  background-color: var(--bg-accent-color, #FF0070);
 }
 
 .header__text-content {
@@ -122,37 +124,47 @@
 }
 
 .content {
+  margin: 40px 10px;
   display: flex;
   flex-direction: column;
   gap: 50px;
-  margin-block-start: 50px;
-  margin-block-end: 50px;
 }
 
 .content__section {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
 .content__section-title {
-  color: var(--section-title-color, #FF0070);
-  font-weight: var(--bold, 700); 
+  color: var(--main-title-color);
+  font-weight: var(--text-bold);
   font-size: inherit;
   line-height: 1.3em;
 }
 
-.content__section-card {
+.content__section-cards {
+  display: grid;
+  gap: 20px;
+}
+
+.card-content {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.content__section-card-pretitle {
-  margin-block-end: 10px;
+.card-text {
+  color: var(--main-text-color);
+  line-height: 1.3em;
 }
 
 .text-normal {
   font-weight: 400;
+}
+
+.card-pretitle {
+  margin-block-end: 10px;
 }
 
 .content__section-card-link {
@@ -165,17 +177,11 @@
 }
 
 .content__section-card-link:hover {
-  border-block-end: 1px solid var(--main-text-color, #F1B2CE);
+  border-block-end: 1px solid var(--main-text-color);
 }
 
 .content__section-card-link:focus {
-  outline: 1px solid var(--main-text-color, #F1B2CE);
-}
-
-.content__section-card-text {
-  color: var(--main-text-color, #F1B2CE);
-  line-height: 1.3em;
-  letter-spacing: 0%;
+  outline: 1px solid var(--main-text-color);
 }
 
 .gallery {
@@ -197,18 +203,18 @@
 }
 
 .footer {
+  padding: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 97vh;
+  min-height: 100vh;
 }
 
 .footer-title {
-  color: var(--footer-title-color, #DB00FF);
-  font-size: var(--footer-title-size);
+  color: var(--title-color);
+  font-size: var(--title-size);
   line-height: 82.5%;
-  letter-spacing: 0%;
   text-align: center;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
@@ -216,16 +222,29 @@
 @media (min-width: 768px) {
 
   :root {
-  --header-title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  --footer-title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .page {
-    padding: 20px;
-  } 
+  /* header */
 
   .header {
-    min-height: 96vh;
+    padding: 20px;
+  }
+
+  .decorated-zone-icon {
+    inset-inline-end: 48px;
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone:after {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+  
+  .decorated-zone:before {
+    inset-block-end: 20px;
+    inset-inline-start: 20px;
   }
 
   .header__title {
@@ -238,32 +257,31 @@
     width: 50%;
   }
 
+  /* main */
+
   .content {
+    margin: 60px 20px;
     gap: 80px;
-    margin-block-start: 80px;
-    margin-block-end: 80px;
   }
 
   .content__section:nth-child(2n+1) {
-    grid-template-columns: minmax(min-content, max-content) 472px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
   }
 
-  .content__section:nth-child(2n+1)  .content__section-title {
-    grid-column: 1;
-  }
-
-  .content__section:nth-child(2n+1)  .content__section-card {
-    grid-column: 2;
+  .content__section-title {
+    min-width: 236px;
   }
 
   .content__section:nth-child(2) .content__section-title {
-    width: 30%;
+    max-width: 30%;
   }
 
   .gallery {
     gap: 20px;
   }
-  
+
   .gallery-images {
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
@@ -294,40 +312,25 @@
     grid-row: 3 / 4;
   }
 
-  .footer {
-    min-height: 96vh;
-  }
 }
 
 @media (min-width: 1024px) {
-
-  .header {
-    min-height: 95vh;
-  }
-
+  
   .header__theme-menu {
     justify-self: center;
     align-self: start;
   }
-  
+
   .header__theme-menu-list {
     flex-direction: row;
   }
 
-  .content__section:nth-child(2n+1) {
-    grid-template-columns: minmax(min-content, max-content) 649px;
+  .content__section-title {
+    min-width: 314px;
   }
 
-  .content__section:nth-child(2) {
-    grid-template-columns: repeat(3, 315px);
-    grid-template-rows: min-content max-content;
+  .content__section:nth-child(2) .content__section-cards {
+    grid-template-columns: repeat(auto-fit, 314px);
   }
 
-  .content__section:nth-child(2) .content__section-title {
-    grid-column: 1 / -1;
-  }
-
-  .footer {
-    min-height: 95vh;
-  }
 }

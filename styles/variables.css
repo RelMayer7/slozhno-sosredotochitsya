@@ -4,21 +4,21 @@
 */
 
 :root {
-  --bg-color: #000028;
+  /* body */
   --bg-image: url(../images/cover-image-dark.png);
-  --accent-color: #FF0070;
+  --bg-color: #000028;
+  --font-size-large: 18px;
   --font-family: 'IBM Plex Mono', sans-serif;
-  --main-text-color: #F1B2CE;
-  --button-color: #FF0070;
-  --section-title-color: #FF0070;
-  --header-title-color: #DB00FF;
+  /* header */
   --decor-color: #FF0070;
-  --header-title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --footer-title-color: #DB00FF;
-  --footer-title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --bg-decor-color: #FF0070;
-  --text-decor-color: #000028;
-  --text-bold: 700;
   --visibility: visible;
-  --bg-accent-color: #FF0070;
+  --menu-color: #FF0070;
+  --title-color: #DB00FF;
+  --text-bold: 700;
+  --title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --accent-color: #FF0070;
+  --accent-text-color: #000028;
+  /* main */
+  --main-title-color: #FF0070;
+  --main-text-color: #F1B2CE;
 }
