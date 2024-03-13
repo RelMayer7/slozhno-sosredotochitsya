@@ -12,7 +12,7 @@
   --bg-image: url(../images/cover-image-dark.png);
   --bg-color: #000028;
   --font-size-large: 18px;
-  --font-family: 'IBM Plex Mono', sans-serif;
+  --font-family: 'IBM Plex Mono', monospace;
   --decor-color: #FF0070;
   --visibility: visible;
   --menu-color: #FF0070;
