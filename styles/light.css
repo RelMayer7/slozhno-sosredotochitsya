@@ -15,6 +15,7 @@
   --decor-color: #353430;
   --visibility: hidden;
   --menu-color: #353430;
+  --opacity-color: rgba(50 49 45 / 0.4);
   --title-color: #FFC2E6;
   --accent-color: #FF8DCB;
   --accent-text-color: #353430;
@@ -30,6 +31,7 @@
     --decor-color: #353430;
     --visibility: hidden;
     --menu-color: #353430;
+    --opacity-color: rgba(50 49 45 / 0.4);
     --title-color: #FFC2E6;
     --accent-color: #FF8DCB;
     --accent-text-color: #353430;
